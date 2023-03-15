@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System;
+using System.Net;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using SplashKitSDK;
+using Microsoft.ML;
+using Microsoft.Data.Analysis;
+//using static DataAnalysis.Visual;
+using Microsoft.ML.Data;
+using System.Linq;
+//using static DataAnalysis.Website;
+using static DataAnalysis.TrainModel;
+
+
+namespace DaVersion02
+{
+    public class ProcessData // : Data
+    {
+        //private static Data _data = new Data();
+
+        public static LoadData _loadData;
+
+        // private static string _label;
+
+        // public string _label
+        // {
+        //     get
+        //     {
+        //         return _label;
+        //     }
+        // }
+
+        // public string ProProcess(Data data) //: base(label)
+        // {
+        //     this._data = data;
+        //     // this._label = label;
+        // }
+
+        // public DataFrame GetDataHead(int rowNumber) // DisplayDataHeadOrTail(int rowNumber, int type)
+        // {
+            // DataFrame dataResult = data.GetDataHead(rowNumber);
+            // if (type == 1)
+            // {
+            //     string title = "---- The tail" + rowNumber + "rows of data ----";
+            // }
+            // else
+            // {
+            //      string title = "---- The first" + rowNumber + "rows of data ----";
+            // }
+            // return dataResult;
+            // Print(title, dataTail);
+        //}
+
+        public void SetLabel(string label) // DisplayDataInfo()
+        {
+            
+            // string title = "---- The data information ----";
+            // DataFrame dataInfo = base.GetDataInfo();
+            // Print(title, dataInfo);
+
+            //_data.Label = label;
+            //_data.label = label;
+        }
+
+        public void FillNulls(List<string> columnsName)
+        {
+            // list<string> list = _data.Columns;
+            // foreach (string columnName in this.list)
+            // {
+            //     //Fill null values in the column with 10
+            //     _dataRandom.Columns[columnName].FillNulls(10, true);
+            // }
+
+        }
+        public void OrderData()
+        {
+            //Sort the DataRandom
+            // DataFrame dataRandomSort = _dataRandom.OrderBy("Data").Head(5);
+            // Print("The first 5 rows of dataRandom after Sorting", dataRandomSort);
+        }
+
+        public static void filterData()
+        {
+            // //Filter and Sort the DataRandom
+            // DataFrame dataRandomFilter = _dataRandom.Filter(_dataRandom.Columns["Data"].ElementwiseGreaterThanOrEqual(50)).OrderByDescending("Data").Head(5);
+            // Print("The first 5 rows of dataRandom after Filter and sort", dataRandomFilter);
+        }
+
+        //Display the dataframe of data
+        public void Print(String title, DataFrame results)
+        {
+            Console.WriteLine($"\n---{title}----");
+            Console.WriteLine("----------------- Start data -----------------");
+            Console.Write(results.ToString());
+            Console.WriteLine("----------------- End data -----------------");
+        }
+
+        // public void VisualData()
+        // {
+        //     Visual displayChart = new Visual();
+        //     var chart = displayChart.scatterChart(x,y);
+        //     var chart_layout = displayChart.layoutChart(title, xaxis, yaxis);
+        //     chart.WithLayout(chart_layout);
+        //     return chart.GetInlineHtml();
+        // }
+    }
+}

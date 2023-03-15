@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace DaVersion02
+{
+    public class Menu
+    {
+        private enum MenuOption
+        {
+            LoadData, ProcessData, DisplayDataOnChart, TrainModel, Quit
+        }
+
+        private enum SecondMenuOption
+        {
+            SetLabel, FillNulls, OrderData, FilterData, ReturnToUpperMenu
+        }
+
+        private enum DataMenuOption
+        {
+            DataInfo, DataDescription, DataDisplay, CountRowColumn, ReturnToUpperMenu
+        }
+
+
+
+        private static MenuOption readUserOption()
+        {
+            ReadUserOption readUserOption = new ReadUserOption();
+
+            readUserOption.MenuPrint();
+            int option = readUserOption.CheckOption();
+
+            return (MenuOption)(option - 1);
+        }
+
+
+        private static SecondMenuOption readSecondOption()
+        {
+            ReadSecondOption readSecondOption = new ReadSecondOption();
+            readSecondOption.MenuPrint();
+            int option = readSecondOption.CheckOption();
+
+            return (SecondMenuOption)(option - 1);
+        }
+
+        private static DataMenuOption readDataOption()
+        {
+            ReadDataOption readDataOption = new ReadDataOption();
+            readDataOption.MenuPrint();
+            int option = readDataOption.CheckOption();
+
+            return (DataMenuOption)(option - 1);
+        }
+
+    }
+}
